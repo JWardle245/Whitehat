@@ -1,63 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1610532235835" clover="3.2.0">
-  <project timestamp="1610532235835" name="All files">
-    <metrics statements="53" coveredstatements="53" conditionals="8" coveredconditionals="8" methods="15" coveredmethods="15" elements="76" coveredelements="76" complexity="0" loc="53" ncloc="53" packages="1" files="6" classes="6"/>
+<coverage generated="1610551001562" clover="3.2.0">
+  <project timestamp="1610551001563" name="All files">
+    <metrics statements="57" coveredstatements="57" conditionals="8" coveredconditionals="8" methods="15" coveredmethods="15" elements="80" coveredelements="80" complexity="0" loc="57" ncloc="57" packages="1" files="6" classes="6"/>
     <file name="Airport.js" path="C:\Users\emper\OneDrive\Documents\GitHub\Whitehat\Airport.js">
-      <metrics statements="28" coveredstatements="28" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
+      <metrics statements="30" coveredstatements="30" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
       <line num="1" count="2" type="stmt"/>
       <line num="2" count="2" type="stmt"/>
       <line num="3" count="2" type="stmt"/>
       <line num="4" count="2" type="stmt"/>
-      <line num="10" count="2" type="stmt"/>
-      <line num="12" count="10" type="stmt"/>
+      <line num="5" count="2" type="stmt"/>
+      <line num="11" count="2" type="stmt"/>
       <line num="13" count="10" type="stmt"/>
       <line num="14" count="10" type="stmt"/>
       <line num="15" count="10" type="stmt"/>
       <line num="16" count="10" type="stmt"/>
-      <line num="26" count="10" type="stmt"/>
-      <line num="28" count="10" type="cond" truecount="2" falsecount="0"/>
-      <line num="29" count="1" type="stmt"/>
-      <line num="31" count="10" type="cond" truecount="2" falsecount="0"/>
-      <line num="32" count="1" type="stmt"/>
-      <line num="34" count="10" type="stmt"/>
+      <line num="17" count="10" type="stmt"/>
+      <line num="27" count="10" type="stmt"/>
+      <line num="29" count="10" type="cond" truecount="2" falsecount="0"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="32" count="10" type="cond" truecount="2" falsecount="0"/>
+      <line num="33" count="1" type="stmt"/>
       <line num="35" count="10" type="stmt"/>
-      <line num="44" count="5" type="stmt"/>
+      <line num="36" count="10" type="stmt"/>
       <line num="45" count="5" type="stmt"/>
-      <line num="54" count="1" type="stmt"/>
+      <line num="46" count="5" type="stmt"/>
       <line num="55" count="1" type="stmt"/>
-      <line num="64" count="2" type="stmt"/>
+      <line num="56" count="1" type="stmt"/>
       <line num="65" count="2" type="stmt"/>
       <line num="66" count="2" type="stmt"/>
-      <line num="68" count="4" type="stmt"/>
-      <line num="71" count="2" type="stmt"/>
-      <line num="80" count="1" type="stmt"/>
-      <line num="85" count="2" type="stmt"/>
+      <line num="67" count="2" type="stmt"/>
+      <line num="69" count="4" type="stmt"/>
+      <line num="72" count="2" type="stmt"/>
+      <line num="81" count="1" type="stmt"/>
+      <line num="82" count="1" type="stmt"/>
+      <line num="87" count="2" type="stmt"/>
     </file>
     <file name="Bag.js" path="C:\Users\emper\OneDrive\Documents\GitHub\Whitehat\Bag.js">
       <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <line num="11" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="11" count="10" type="cond" truecount="2" falsecount="0"/>
       <line num="12" count="1" type="stmt"/>
-      <line num="14" count="6" type="stmt"/>
-      <line num="18" count="3" type="stmt"/>
+      <line num="14" count="9" type="stmt"/>
+      <line num="18" count="4" type="stmt"/>
     </file>
     <file name="CrewMember.js" path="C:\Users\emper\OneDrive\Documents\GitHub\Whitehat\CrewMember.js">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <line num="1" count="2" type="stmt"/>
-      <line num="10" count="2" type="stmt"/>
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="3" type="stmt"/>
+      <line num="9" count="5" type="stmt"/>
+      <line num="10" count="5" type="stmt"/>
+      <line num="14" count="3" type="stmt"/>
     </file>
     <file name="Passenger.js" path="C:\Users\emper\OneDrive\Documents\GitHub\Whitehat\Passenger.js">
-      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="1" count="3" type="stmt"/>
       <line num="8" count="7" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="16" count="3" type="stmt"/>
+      <line num="9" count="7" type="stmt"/>
+      <line num="13" count="3" type="stmt"/>
     </file>
     <file name="Person.js" path="C:\Users\emper\OneDrive\Documents\GitHub\Whitehat\Person.js">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="14" count="8" type="stmt"/>
-      <line num="15" count="8" type="stmt"/>
-      <line num="23" count="5" type="stmt"/>
-      <line num="27" count="3" type="stmt"/>
+      <line num="14" count="12" type="stmt"/>
+      <line num="15" count="12" type="stmt"/>
+      <line num="23" count="8" type="stmt"/>
+      <line num="27" count="4" type="stmt"/>
     </file>
     <file name="Plane.js" path="C:\Users\emper\OneDrive\Documents\GitHub\Whitehat\Plane.js">
       <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>

@@ -79,18 +79,9 @@ class Airport {
      */
     land(plane) {
         this.removePlane(plane);
-        console.log(plane.destination);
+        console.log("Flight " + plane.flightNumber + " from " + plane.origin + " has arrived at " + plane.destination);
     }
 
 }
-
-const LHR = new Airport('LHR');
-const LAX = new Airport('LAX');
-const plane1 = new Plane();
-plane1.setOrigin('LHR');
-plane1.setDestination('LAX');
-LHR.addPlane(plane1);
-LHR.takeOff(plane1);
-LAX.land(plane1);
 
 module.exports = Airport

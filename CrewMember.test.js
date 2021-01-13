@@ -9,7 +9,7 @@ describe('CrewMember', function () {
     });
 
     test('has bags', function () {
-        const person = new CrewMember({name: William});
+        const person = new CrewMember({name: "William"});
         const handluggage = new Bag(8);
         const hullluggage = new Bag(25);
         person.addBag(handluggage);
@@ -21,7 +21,7 @@ describe('CrewMember', function () {
         const john = new CrewMember({name: "Jim"});
         const rucksack = new Bag(6);
         john.addBag(rucksack);
-        expect(person.bags[0].weight).toBe(6);
+        expect(john.bags[0].weight).toBe(6);
     });
 
     test('we can read title', function () {
