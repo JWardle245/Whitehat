@@ -28,11 +28,8 @@ describe('Passenger', function () {
         expect(pax1 instanceof Passenger).toBeTruthy;
     })
 
-    test('callAttendant', () => {
-        const pax1 = new Passenger({name: 'Poppy'});
-        console.log = jest.fn();
-
-        pax1.callAttendant();
-        expect(console.log).toHaveBeenCalledWith("Excuse me, Hay there!");
+    test('has ticket number', function () {
+        const greg = new Passenger("Greg", "BA001");
+        expect(greg.ticketNumber).toEqual('BA001');
     })
 })

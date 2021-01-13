@@ -5,6 +5,10 @@ const Person = require('./Person');
  */
 class CrewMember extends Person {
 
+    constructor(name, title, bags) {
+        super(name, bags);
+        this.title = title;
+    }
 }
 
 module.exports = CrewMember;
