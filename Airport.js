@@ -2,6 +2,7 @@ const fsp = require('fs').promises; // Node.js file system module with promises
 const fs = require('fs'); // Node.js file system module for standard callbacks
 const path = require('path'); // Node.js directories and file paths module
 const Passenger = require('./Passenger');
+const Plane = require('./Plane');
 
 /**
  * Represents an airport.
@@ -77,9 +78,19 @@ class Airport {
      * @param {plane} plane - The plane which has just landed.
      */
     land(plane) {
-        this.removePlane(plane);       
+        this.removePlane(plane);
+        console.log(plane.destination);
     }
 
 }
+
+const LHR = new Airport('LHR');
+const LAX = new Airport('LAX');
+const plane1 = new Plane();
+plane1.setOrigin('LHR');
+plane1.setDestination('LAX');
+LHR.addPlane(plane1);
+LHR.takeOff(plane1);
+LAX.land(plane1);
 
 module.exports = Airport
