@@ -1,0 +1,13 @@
+@startuml Use Case Diagram
+left to right direction
+actor "Customer" as fc
+rectangle HireStation {
+  usecase "Insert money" as UC1
+  usecase "Take scooter" as UC2
+  usecase "Return scooter" as UC3
+}
+fc --> UC1
+fc --> UC2
+fc --> UC3
+
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+
+title Relationships - Class Diagram
+
+
+class Station {
+  String location
+  Int capacity
+  void addScooter()
+  void removeScooter()
+}
+
+class Scooter{
+  Int charge
+}
+
+class User{
+  Int balance
+}
+
+class Station
+class Scooter
+class User
+
+Station "1" -down- "many" Scooter
+Scooter "1" -down- "1" User
+
+@enduml

@@ -1,0 +1,9 @@
+@startuml Sequence Diagram
+actor User
+User -> ChargingStation: Scooter Request
+ChargingStation -> Scooter: Checks available scooters
+ChargingStation <-- Scooter: Returns first available scooter id
+User <- ChargingStation: Requests payment
+User --> ChargingStation: Returns payment
+User <- ChargingStation: Passes over scooter
+@enduml
