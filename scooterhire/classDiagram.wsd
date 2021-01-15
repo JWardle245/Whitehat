@@ -8,13 +8,17 @@ class Station {
   Int capacity
   void addScooter()
   void removeScooter()
+  void assignScooter()
+  void returnScooter()
 }
 
 class Scooter{
+  Int id
   Int charge
 }
 
 class User{
+  Int username
   Int balance
 }
 

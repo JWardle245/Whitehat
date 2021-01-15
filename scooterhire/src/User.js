@@ -1,17 +1,18 @@
 /**
- * Represents a customer
+ * Represents a customer of the scooter hire service
  */
 class User {
     /**
      * Creates a user
      * 
-     * @param {string} name
+     * @param {string} username
      */
-    constructor(name) {
-        if (!name) {
-            throw new Error('user must have a name');
+    constructor(username, balance) {
+        if (!username) {
+            throw new Error('user must have a unique username');
         }
-        this.name = name;
+        this.username = username;
+        this.balance = balance;
     }
 }
 

@@ -1,9 +1,12 @@
 @startuml Sequence Diagram
 actor User
 User -> ChargingStation: Scooter Request
-ChargingStation -> Scooter: Checks available scooters
+ChargingStation -> Scooter: Checks available charged scooters
 ChargingStation <-- Scooter: Returns first available scooter id
 User <- ChargingStation: Requests payment
 User --> ChargingStation: Returns payment
-User <- ChargingStation: Passes over scooter
+User <- ChargingStation: Allows use of scooter
+User -> ChargingStation: Returns scooter
+ChargingStation -> Scooter: Charges battery
+ChargingStation <-- Scooter: Battery is charged
 @enduml
