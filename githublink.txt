@@ -1,0 +1,3 @@
+Here is a link to the GitHub repositories where you can find evidence for my objectives
+https://github.com/JWardle245/spring-demo (for Java development environment)
+https://github.com/JWardle245/Whitehat
