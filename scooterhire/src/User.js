@@ -13,6 +13,7 @@ class User {
         }
         this.username = username;
         this.balance = balance;
+        this.scooter;
     }
 }
 

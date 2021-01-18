@@ -1,12 +1,12 @@
-const User = require('../User')
+const User = require('../src/User')
 
 describe('User', function () {
     test('has a name', function () {
         const john = new User("John", 30);
-        expect(user.name).toBe("John");
+        expect(john.username).toBe("John");
     });
 
     test('does not have a name', function () {
-        expect(() => new Bag()).toThrowError('user must have a unique username');
+        expect(() => new User()).toThrowError('user must have a unique username');
     });
-})
+});

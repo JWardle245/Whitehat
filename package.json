@@ -4,8 +4,7 @@
   "description": "sample code",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll",
-    "test:report": "jest --coverage=true"
+    "test": "jest"
   },
   "author": "whitehat",
   "license": "ISC",
