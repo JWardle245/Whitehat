@@ -32,8 +32,6 @@ class Scooter {
 
     /**
      * Charges the battery of the scooter over the course of 4 seconds
-     * 
-     * @param {Number} charge
      */
     async chargeBattery(){
         await new Promise(resolve => setTimeout(resolve, 4000));

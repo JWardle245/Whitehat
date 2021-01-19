@@ -63,4 +63,15 @@ describe('Station', function () {
         station1.returnScooter(user1);
         expect(user1.scooter.id).toBe(undefined);
     });
+
+    test('Return scooter to different station', function () {
+        const station1 = new Station("london");
+        const station2 = new Station("reading");
+        const scooter1 = new Scooter("001", 100);
+        const user1 = new User("john", 30);
+        station1.addScooter(scooter1);
+        station1.assignScooter(user1);
+        station2.returnScooter(user1);
+        expect(station2.scooters.length).toBe(1);
+    });
 });

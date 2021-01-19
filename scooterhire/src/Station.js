@@ -48,8 +48,7 @@ class Station {
      * @param {user} user - The user
      */
     assignScooter(user){
-        var index;
-        for (index = 0; index<this.scooters.length; index++){
+        for (let index = 0; index<this.scooters.length; index++){
             if (this.scooters[index].checkCharge() == "charged" && this.scooters[index].docked == "yes"){
                 if (user.balance > 10){
                     user.balance -= 10;
