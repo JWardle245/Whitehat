@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+@media screen and (min-width: 0em){
+    /* css for small screens goes here */
+    body{
+        background-color: rgb(47, 136, 143);
+    }
+}
+@media screen and (min-width: 40em) {
+    /* css for mid screens goes here */
+      section {
+          margin: 1rem;
+          display: grid;
+          grid-template-columns: auto auto;
+          grid-template-rows: none;
+          gap: 1rem;
+      }
+      article {
+          margin: 0;
+          width: 100%;
+      }
+      body {
+        background-color: rgb(60, 182, 190);
+      }
+  }
+
+@media screen and (min-width: 60em) {
+  /* css for massive screens goes here */
+    section {
+        grid-template-columns: auto auto auto;
+    }
+    body {
+        background-color: rgb(74, 222, 233);
+    }
+}
+
+h1 {
+    padding: 1rem;
+    border-bottom: solid 1px rgb(33, 12, 156);
+}
+article {
+    background-color: rgb(47, 143, 150);
+    border: solid 5px rgb(33, 12, 156);
+    width: calc(100% - 2rem);
+    height: auto;
+    margin: 1rem 1rem;
+    text-align: center;
+}
+body{
+    color: rgb(14, 9, 9);
+    /*background-color: rgb(60, 182, 190);*/
+}
+img{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: auto;
+}
+h1{
+    text-align: center;
+    font-weight: bold;
+}
+main{
+    font-size: xx-large;
+    font-weight: bold;
+    color:rgb(52, 38, 128);
+    text-decoration: underline;
+}
+p{
+    font-size: large;
+}
+.menus{
+    margin: auto;
+    width: 40%;
+}
