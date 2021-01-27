@@ -1,15 +1,17 @@
-<h1>{{restaurant.name}}</h1>
-<br>
+<h1>{{restaurant.name}} - Menus</h1>
+<div style="background-image: url({{restaurant.image}}); background-size: 100%;">
     <article class="menus">
+        <br>
         {{#each restaurant.menus}}
             <main>{{this.title}}</main>
             <br>
             {{#each this.items}}
-                <p>{{this.name}}</p>
+                <p> - {{this.name}} £{{this.price}}</p>
+                <br>
             {{/each}}
-            <br>
+            <br><br>
         {{/each}}
     </article>
-
+</div>
 
 <script src="../about.js"></script>

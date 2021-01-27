@@ -48,7 +48,6 @@ app.get('/about/:id', async (req, res) => {
         ],
         nest: true
     })
-    console.log(restaurants)
     res.render('about', {restaurant:restaurants})
 })
 
