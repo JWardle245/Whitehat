@@ -472,41 +472,5 @@
               ]
           }
           ]
-    },
-    {
-        "name": "Ga Ga restaurant",
-        "image": "https://i.ytimg.com/vi/LDZ4NIPxWAo/maxresdefault.jpg",
-        "menus": [
-            {
-                "title": "Gaga menoo toot toot",
-                "items": [
-                    {
-                        "name": "AHHHH!",
-                        "price": "del"
-                    },
-                    {
-                        "name": "Gas",
-                        "price": "eleventy-seven"
-                    },
-                    {
-                        "name": "Gibraltar",
-                        "price": "600 (= 2 apex coins)"
-                    },
-                    {
-                        "name": "Makka Pakka soap cake",
-                        "price": 20
-                    },
-                    
-                    {
-                        "name": "pizza",
-                        "price": 200
-                    },
-                    {
-                        "name": "pasta",
-                        "price": 0
-                    }
-                ]
-            }
-        ]
     }
 ]

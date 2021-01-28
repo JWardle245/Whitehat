@@ -20,6 +20,8 @@ app.set('view engine', 'handlebars')
 
 // serve static assets from the public/ folder
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 // this route matches any GET request to the http://localhost:3000
 app.get('/', async (req, res) => {
@@ -49,6 +51,35 @@ app.get('/about/:id', async (req, res) => {
         nest: true
     })
     res.render('about', {restaurant:restaurants})
+})
+
+app.get('/form', async (req, res) => {
+    res.render('form')
+})
+
+app.post('/restaurants', async (req, res) => {
+    console.log(req.body); // this is the JSON body
+    const restaurant = await Restaurant.create(req.body)
+    res.redirect('/')
+})
+
+app.get('/about/:id/delete', (req, res) => {
+    Restaurant.findByPk(req.params.id)
+        .then(restaurant => {
+            restaurant.destroy()
+            res.redirect('/')
+        })
+})
+
+app.get('/about/:id/edit', async (req, res) => {
+    const restaurant = await Restaurant.findByPk(req.params.id)
+    res.render('edit', {restaurant})
+})
+
+app.post('/submit/:id', async (req, res) => {
+    const restaurant = await Restaurant.findByPk(req.params.id)
+    await restaurant.update(req.body)
+    res.redirect(`/about/${restaurant.id}`)
 })
 
 app.listen(port, () => {

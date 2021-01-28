@@ -1,6 +1,12 @@
-<h1>{{restaurant.name}} - Menus</h1>
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="./{{restaurant.id}}/edit">Edit</a></li>
+    <li><a href="./{{restaurant.id}}/delete"><img src="https://www.pinclipart.com/picdir/big/334-3343695_minimalist-x-mark-clip-art-medium-size-yellow.png" style="width: 1.5%; heigth: 1.5%;" class="otherimg"></a></li>
+</ul>
+
 <div style="background-image: url({{restaurant.image}}); background-size: 100%;">
-    <article class="menus">
+    <article class="title"><main>{{restaurant.name}} - Menus</main></article>
+    <article class="middle">
         <br>
         {{#each restaurant.menus}}
             <main>{{this.title}}</main>
@@ -13,5 +19,3 @@
         {{/each}}
     </article>
 </div>
-
-<script src="../about.js"></script>
