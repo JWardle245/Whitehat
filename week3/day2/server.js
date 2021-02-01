@@ -7,6 +7,7 @@ const {Menu} = require('./Menu')
 const {MenuItem} = require('./MenuItem')
 const {loadAndInsert} = require('./populateDB');
 const { request } = require('express');
+const { Rating } = require('./Rating');
 
 const app = express();
 const port = 3000;
@@ -46,6 +47,9 @@ app.get('/about/:id', async (req, res) => {
             {
                 model: Menu, as: 'menus',
                 include: [{model:MenuItem, as: 'items'}]
+            },
+            {
+                model: Rating, as: 'ratings'
             }
         ],
         nest: true
@@ -79,6 +83,18 @@ app.get('/about/:id/edit', async (req, res) => {
 app.post('/submit/:id', async (req, res) => {
     const restaurant = await Restaurant.findByPk(req.params.id)
     await restaurant.update(req.body)
+    res.redirect(`/about/${restaurant.id}`)
+})
+
+app.get('/about/:id/review', async (req, res) => {
+    const restaurant = await Restaurant.findByPk(req.params.id)
+    res.render('review', {restaurant})
+})
+
+app.post('/submitreview/:id', async (req, res) => {
+    const restaurant = await Restaurant.findByPk(req.params.id)
+    const newrating = await Rating.create(req.body)
+    await restaurant.update(newrating)
     res.redirect(`/about/${restaurant.id}`)
 })
 

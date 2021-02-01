@@ -1,0 +1,35 @@
+<title>review restaurant</title>
+<ul>
+    <li><a href="/" aria-label="Open home page">Home</a></li>
+</ul>
+<div style="background-image: url(https://www.stone-ideas.com/wordpress/wp-content/uploads/2017/02/Lithea17-1-2.jpg); background-size: 100%;">
+    <article class="middlesmall" style="margin-bottom: 10%;">
+        <br>
+        <h6>Review of {{restaurant.name}}</h6>
+        <form action="/submitreview/{{restaurant.id}}" method="POST" id="rating">
+            <label>Title</label><br>
+            <input type="text" id="title" name="title" required><br>
+            <label>Rating</label><br>
+            <input type="radio" id="1" name="stars" value="1">
+            <img src="https://i.imgur.com/FWzkARs.png" class="star"><img src="https://i.imgur.com/6lHYlHf.png" class="star"><img src="https://i.imgur.com/6lHYlHf.png" class="star"><img src="https://i.imgur.com/6lHYlHf.png" class="star"><img src="https://i.imgur.com/6lHYlHf.png" class="star">
+            <br>
+            <input type="radio" id="2" name="stars" value="2">
+            <img src="https://i.imgur.com/FWzkARs.png" class="star"><img src="https://i.imgur.com/FWzkARs.png" class="star"><img src="https://i.imgur.com/6lHYlHf.png" class="star"><img src="https://i.imgur.com/6lHYlHf.png" class="star"><img src="https://i.imgur.com/6lHYlHf.png" class="star">
+            <br>
+            <input type="radio" id="3" name="stars" value="3">
+            <img src="https://i.imgur.com/FWzkARs.png" class="star"><img src="https://i.imgur.com/FWzkARs.png" class="star"><img src="https://i.imgur.com/FWzkARs.png" class="star"><img src="https://i.imgur.com/6lHYlHf.png" class="star"><img src="https://i.imgur.com/6lHYlHf.png" class="star">
+            <br>
+            <input type="radio" id="4" name="stars" value="4">
+            <img src="https://i.imgur.com/FWzkARs.png" class="star"><img src="https://i.imgur.com/FWzkARs.png" class="star"><img src="https://i.imgur.com/FWzkARs.png" class="star"><img src="https://i.imgur.com/FWzkARs.png" class="star"><img src="https://i.imgur.com/6lHYlHf.png" class="star">
+            <br>
+            <input type="radio" id="5" name="stars" value="5">
+            <img src="https://i.imgur.com/FWzkARs.png" class="star"><img src="https://i.imgur.com/FWzkARs.png" class="star"><img src="https://i.imgur.com/FWzkARs.png" class="star"><img src="https://i.imgur.com/FWzkARs.png" class="star"><img src="https://i.imgur.com/FWzkARs.png" class="star">
+            <br><br>
+            <label>Description</label><br>
+            <textarea name="description" form="rating" rows="4" cols="30"></textarea><br>
+            <input type="number" name="restaurant_id" value="{{restaurant.id}}" hidden>
+            <input type="submit" value="Submit" class="submit">
+        </form>
+        
+    </article>
+</div>

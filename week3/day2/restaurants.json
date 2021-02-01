@@ -41,6 +41,13 @@
                     }
                 ]
             }
+        ],
+        "ratings": [
+            {
+                "title": "Great service",
+                "stars": 4,
+                "description": "Nice food too"
+            }
         ]
     },
     {
@@ -89,7 +96,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "ratings": []
     },
     {
         "name": "Balthazar",
@@ -178,7 +186,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "ratings": []
     },
     {
         "name": "Berners Tavern",
@@ -254,7 +263,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "ratings": []
     },
     {
         "name": "Blanchette East",
@@ -305,7 +315,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "ratings": []
     },
     {
         "name": "Bob Bob Ricard",
@@ -374,7 +385,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "ratings": []
     },
     {
         "name": "Cafe Monico",
@@ -431,7 +443,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "ratings": []
     },
     {
         "name": "Impact crator",
@@ -471,6 +484,7 @@
               }
               ]
           }
-          ]
+        ],
+        "ratings": []
     }
 ]

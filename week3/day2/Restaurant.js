@@ -1,5 +1,6 @@
 const {sequelize, DataTypes, Model} = require('./sequelize_index');
 const {Menu} = require('./Menu')
+const {Rating} = require('./Rating')
 
 /**
  * Represents a Restaurant
@@ -19,6 +20,9 @@ Restaurant.init({
 
 Restaurant.hasMany(Menu, {as: 'menus', foreignKey: 'restaurant_id'})
 Menu.belongsTo(Restaurant, {foreignKey: 'restaurant_id'})
+
+Restaurant.hasMany(Rating, {as: 'ratings', foreignKey: 'restaurant_id'})
+Rating.belongsTo(Restaurant, {foreignKey: 'restaurant_id'})
 
 module.exports = {
     Restaurant

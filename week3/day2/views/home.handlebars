@@ -1,20 +1,41 @@
+<title>home</title>
 <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="./form" style="float: right;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAJ1BMVEUAAAD//wC5uQDBwQCrqwCurgB8fACBgQC9vQDFxQDr6wDo6ADu7gBuNVTuAAABZklEQVR4nO3dgXHCMBREQQcsY5P0X29aYLAY3w37Krgt4EvLMrttrO83HtP3zG//OdNx9fwXup0S3q+e/0KEhPkREuZHSJgfIWF+hIT5ERLmR0iYHyFhfoSE+RES5kdImB8hYX6EhPkREuZHSJgfIWF+hIT5ERLmR0iYHyFhfoSE+RES5kdImB8hYX6EhPkREk5v229z+z0lfE5es2/LODUov7GsV0/4cCthfYT9EfZH2B9hf4T9EfZH2B9hf4T9EfZH2B9hf4T9EfZH2B9hf4T9EfZH2B9hf4T9EfZH2B9hf4T9EfZH2B9hf+sX3D09jvvcnqcG/U1ec3zgO/q4+8PpERLmR0iYHyFhfoSE+RES5kdImB8hYX6EhPkREuZHSJgfIWF+hIT5ERLmR0iYHyFhfoSE+RES5kdImB8hYX6EhPkREuZHSJgfIWF+hIT5ERLmR0iY335KeFw9/4W2sb7fmP9gzj+qpWZliUWWIQAAAABJRU5ErkJggg==" style="width: 15%; height: 15%;" class="otherimg"></a></li>
+    <li><a href="/" aria-label="Open home page">Home</a></li>
+    <li><a href="./form" style="float: right;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAJ1BMVEUAAAD//wC5uQDBwQCrqwCurgB8fACBgQC9vQDFxQDr6wDo6ADu7gBuNVTuAAABZklEQVR4nO3dgXHCMBREQQcsY5P0X29aYLAY3w37Krgt4EvLMrttrO83HtP3zG//OdNx9fwXup0S3q+e/0KEhPkREuZHSJgfIWF+hIT5ERLmR0iYHyFhfoSE+RES5kdImB8hYX6EhPkREuZHSJgfIWF+hIT5ERLmR0iYHyFhfoSE+RES5kdImB8hYX6EhPkREk5v229z+z0lfE5es2/LODUov7GsV0/4cCthfYT9EfZH2B9hf4T9EfZH2B9hf4T9EfZH2B9hf4T9EfZH2B9hf4T9EfZH2B9hf4T9EfZH2B9hf4T9EfZH2B9hf+sX3D09jvvcnqcG/U1ec3zgO/q4+8PpERLmR0iYHyFhfoSE+RES5kdImB8hYX6EhPkREuZHSJgfIWF+hIT5ERLmR0iYHyFhfoSE+RES5kdImB8hYX6EhPkREuZHSJgfIWF+hIT5ERLmR0iY335KeFw9/4W2sb7fmP9gzj+qpWZliUWWIQAAAABJRU5ErkJggg==" style="width: 15%; height: 15%;" alt="add restaurant" class="otherimg"></a></li>
 </ul>
 <div style="background-image: url(https://www.stone-ideas.com/wordpress/wp-content/uploads/2017/02/Lithea17-1-1.jpg); background-size: 100%;">
-<article class="title"><main>Restaurants</main></article>
+  <div class="rating">Number of page loads:
+        <span id="Counter"></span>
+    </div>
+<article class="title" aria-label="restaurants"><h6 WAI-ARIA role="heading" aria-level="1">Restaurants</h6></article>
 <section style="padding-left: 4%; padding-right: 0;">
     {{#each restaurants}}
-        <article style="width: 90%;">
-            <main>{{this.name}}</main>
+        <article style="width: 90%;" aria-label="restaurant {{this.name}}">
+            <h6>{{this.name}}</h6>
             {{#each this.menus}}
             <p> - {{this.title}}</p>
             {{/each}}
             <br>
-            <a href="./about/{{this.id}}"><img src={{this.image}} alt="image of restaurant"/></a>
+            <a href="./about/{{this.id}}" aria-label="Open about page for {{this.name}}"><img src={{this.image}} alt="image of restaurant"/></a>
             <br>
         </article>
     {{/each}}
 </section>
 </div>
+  <script>
+        var n = localStorage.getItem('on_load_counter');
+
+        if (n === null) {
+            n = 0;
+        }
+        n++;
+
+        localStorage.setItem("on_load_counter", n);
+
+        nums = n.toString().split('').map(Number);
+        document.getElementById('CounterVisitor').innerHTML = '';
+        for (var i of nums) {
+            document.getElementById('CounterVisitor').innerHTML += '<span class="counter-item">' + i + '</span>';
+        }
+
+    </script>

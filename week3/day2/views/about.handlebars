@@ -1,21 +1,53 @@
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="e4j7NX4h"></script>
+<title>about</title>
 <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="./{{restaurant.id}}/edit">Edit</a></li>
-    <li><a href="./{{restaurant.id}}/delete"><img src="https://www.pinclipart.com/picdir/big/334-3343695_minimalist-x-mark-clip-art-medium-size-yellow.png" style="width: 1.5%; heigth: 1.5%;" class="otherimg"></a></li>
+    <li><a href="/" aria-label="Open home page">Home</a></li>
+    <li><a href="./{{restaurant.id}}/edit" aria-label="Edit {{this.name}}">Edit</a></li>
+    <li><a href="./{{restaurant.id}}/review" aria-label="Review {{this.name}}">Review</a></li>
+    <li><a href="./{{restaurant.id}}/delete" aria-label="Delete {{this.name}}"><img src="https://www.pinclipart.com/picdir/big/334-3343695_minimalist-x-mark-clip-art-medium-size-yellow.png" style="width: 1.5%; heigth: 1.5%;" class="otherimg"></a></li>
 </ul>
 
 <div style="background-image: url({{restaurant.image}}); background-size: 100%;">
-    <article class="title"><main>{{restaurant.name}} - Menus</main></article>
+    <article class="title"><h6>{{restaurant.name}} - Menus</h6></article>
     <article class="middle">
         <br>
         {{#each restaurant.menus}}
-            <main>{{this.title}}</main>
+            <h6>{{this.title}}</h6>
             <br>
             {{#each this.items}}
                 <p> - {{this.name}} £{{this.price}}</p>
                 <br>
             {{/each}}
             <br><br>
+        {{/each}}
+    </article>
+    <br><br>
+    <article class="title">
+        <h6>Reviews</h6>
+        <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="standard" data-action="recommend" data-size="small" data-share="true" data-color-scheme="dark"></div>
+    </article>
+    <article class="middle">
+        <br>
+        {{#each restaurant.ratings}}
+        <p id="stars{{this.id}}" hidden>{{this.stars}}</p><hr><br>
+        <h1>{{this.title}}</h1>
+        <div class="rating" id="rating{{this.id}}"></div>
+        <script>
+            var id = {{this.id}};
+            var stars = document.getElementById(`stars${id}`).textContent;
+            var full = stars;
+            var empty = 5 - full;
+            while(full>0){
+                document.getElementById(`rating${id}`).innerHTML += "<img src='https://i.imgur.com/FWzkARs.png' alt='star' class='star'>";
+                full -= 1;
+            };
+            while(empty>0){
+                document.getElementById(`rating${id}`).innerHTML += "<img src='https://i.imgur.com/6lHYlHf.png' alt='no star' class='star'>";
+                empty -= 1;
+            }
+        </script>
+        <p>"{{this.description}}"</p><br><br>
         {{/each}}
     </article>
 </div>

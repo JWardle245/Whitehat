@@ -1,6 +1,7 @@
 const {Restaurant} = require('./Restaurant')
 const {Menu} = require('./Menu')
 const {MenuItem} = require('./MenuItem')
+const {Rating} = require('./Rating')
 const fsp = require('fs').promises; // Node.js file system module with promises
 const {sequelize} = require('./sequelize_index');
 
@@ -38,6 +39,11 @@ async function loadAndInsert() {
             menuCounter++;
         }
 
+        for (let x = 0; x < currentRestaurant.ratings.length; x++) {
+            const currentRating = currentRestaurant.ratings[x]
+
+            await Rating.create ({title: currentRating.title, stars: currentRating.stars, description: currentRating.description,  restaurant_id: i+1})
+        }
     }
 }
 
