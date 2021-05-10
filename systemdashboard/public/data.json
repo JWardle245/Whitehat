@@ -1,0 +1,22 @@
+[
+    {
+     "in_app": "SECORE",
+     "in_delivery": "green",
+     "detail1": "File was delivered successfully",
+     "in_process": "amber",
+     "detail2": "Files were processed with error",
+     "out_app": "SECORE",
+     "out_delivery": "green",
+     "detail3": "File was not delivered"
+    },
+    {
+        "in_app": "NCS",
+        "in_delivery": "amber",
+        "detail1": "File was delivered successfully",
+        "in_process": "red",
+        "detail2": "File was delivered successfully",
+        "out_app": "NCS",
+        "out_delivery": "green",
+        "detail3": "File was delivered successfully"
+       }
+ ]

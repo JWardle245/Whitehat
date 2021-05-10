@@ -36,7 +36,3 @@ module.exports = {
 
     console.log("Inserted restaurant name is:" + r.name);
 })();*/
-
-
-
-

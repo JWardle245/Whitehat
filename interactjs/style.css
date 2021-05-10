@@ -1,0 +1,19 @@
+.body{
+
+}
+
+.column{
+  background-color: rgb(80, 82, 83);
+}
+
+.task {
+    width: 25%;
+    min-height: 6.5em;
+    margin: 1rem 0 0 1rem;
+    background-color: rgb(236, 246, 253);
+    color: rgb(12, 11, 11);
+    border-radius: 0.75em;
+    padding: 4%;
+    touch-action: none;
+    user-select: none;
+  }
