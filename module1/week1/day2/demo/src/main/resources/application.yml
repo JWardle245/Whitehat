@@ -1,0 +1,8 @@
+auth0:
+  audience: https://airports
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-akso3ril.eu.auth0.com/
