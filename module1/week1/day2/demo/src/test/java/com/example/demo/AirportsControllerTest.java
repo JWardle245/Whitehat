@@ -82,6 +82,13 @@ public class AirportsControllerTest {
                 .andExpect(status().isNoContent())
                 .andExpect(content().string("Airport deleted"));
     }
+
+    @Test
+    public void fail_Authentication() throws Exception {
+        mockMvc.perform(delete("/airports/01").header(HttpHeaders.AUTHORIZATION,
+                "Basic " + Base64Utils.encodeToString("admin:wrong".getBytes())))
+                .andExpect(status().isUnauthorized());
+    }
 //    private static void printJSON(Object object) {
 //        String result;
 //        try {

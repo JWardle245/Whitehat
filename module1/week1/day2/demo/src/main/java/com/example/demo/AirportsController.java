@@ -7,8 +7,12 @@ import java.util.List;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/airports")
@@ -36,12 +40,12 @@ public class AirportsController {
     public String getAirports() {
         return ("Retrieved airports list");
     }
-
+/*
     @PostMapping("/")
     @ResponseStatus(value = HttpStatus.CREATED) //201
     public String postAirport() {
         return ("Airport added");
-    }
+    }*/
 
     @DeleteMapping("/")
     @ResponseStatus(value = HttpStatus.NO_CONTENT) //204
@@ -64,6 +68,12 @@ public class AirportsController {
     @ResponseStatus(value = HttpStatus.NO_CONTENT) //204
     public String deleteAirport() {
         return ("Airport deleted");
+    }
+
+    @PostMapping("/")
+    @ResponseStatus(HttpStatus.CREATED)
+    String createAirport(@Valid @RequestBody Airport airport, HttpServletResponse response) {
+        return ("Airport added");
     }
 
     // You can build out the rest of the endpoints
