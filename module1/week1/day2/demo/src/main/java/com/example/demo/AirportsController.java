@@ -55,7 +55,7 @@ public class AirportsController {
 
     @GetMapping("/{id}")
     public String getAirport() {
-        return ("Retrieved airport");
+        return ("Requested airport");
     }
 
     @PutMapping("/{id}")
