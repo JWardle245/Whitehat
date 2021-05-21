@@ -22,6 +22,201 @@ const login = async (targetUrl) => {
   }
 };
 
+const balance = async (targetUrl) => {
+  try {
+
+    console.log("calling api");
+    // Getting the access token from Auth0
+    const accessToken = await auth0.getTokenSilently();
+    const user = await auth0.getUser();
+    console.log('token is:' +accessToken);
+    console.log('user is:'+user);
+
+    // Making the call to the API using the token
+    const response = await fetch('http://localhost:8080/banking/balance', {
+      method: 'GET',
+      crossDomain: true,
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    });
+
+    // Getting the response and displaying it on the page
+    const responseData = await response.text();
+    console.log("response is: " + responseData);
+    const responseElement = document.getElementById("api-call-result");
+    responseElement.innerText = responseData;
+
+} catch (e) {
+    // Display errors in the console
+    console.error(e);
+  }
+}
+
+const transferForm = async (targetUrl) => {
+  //Hide other form
+  var hideForm = document.getElementById("orderForm");
+  hideForm.style.display = "none";
+
+  //Clear previous call response, and form
+  var clear = document.getElementById("transfer-call-result");
+  clear.innerText = "";
+  document.getElementById("transferFormActual").reset();
+
+  //Hide or display form
+  var x = document.getElementById("transferForm");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+const transfer = async (targetUrl) => {
+  try {
+    console.log("calling api");
+    // Getting the access token from Auth0
+    const accessToken = await auth0.getTokenSilently();
+    const user = await auth0.getUser();
+    console.log('token is:' +accessToken);
+    console.log('user is:'+user);
+
+    // Making the call to the API using the token
+    const response = await fetch('http://localhost:8080/banking/transfer', {
+      method: 'GET',
+      crossDomain: true,
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    });
+
+    // Getting the response and displaying it on the page
+    const responseData = await response.text();
+    console.log("response is: " + responseData);
+    const responseElement = document.getElementById("transfer-call-result");
+    responseElement.innerText = responseData;
+
+    
+
+} catch (e) {
+    // Display errors in the console
+    console.error(e);
+  }
+}
+
+const orderForm = async (targetUrl) => {
+  //Make sure other form is hidden
+  var hideForm = document.getElementById("transferForm");
+  hideForm.style.display = "none";
+
+  //Clear previous call response, and form
+  var response = document.getElementById("create-order-call-result");
+  response.innerText = "";
+  document.getElementById("orderFormActual").reset();
+
+  //Hide or display form
+  var x = document.getElementById("orderForm");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+const createOrder = async (targetUrl) => {
+  try {
+
+    console.log("calling api");
+    // Getting the access token from Auth0
+    const accessToken = await auth0.getTokenSilently();
+    const user = await auth0.getUser();
+    console.log('token is:' +accessToken);
+    console.log('user is:'+user);
+
+    // Making the call to the API using the token
+    const response = await fetch('http://localhost:8080/banking/orders/new', {
+      method: 'POST',
+      crossDomain: true,
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    });
+
+    // Getting the response and displaying it on the page
+    const responseData = await response.text();
+    console.log("response is: " + responseData);
+    const responseElement = document.getElementById("create-order-call-result");
+    responseElement.innerText = responseData;
+
+} catch (e) {
+    // Display errors in the console
+    console.error(e);
+  }
+}
+
+const orders = async (targetUrl) => {
+  try {
+
+    console.log("calling api");
+    // Getting the access token from Auth0
+    const accessToken = await auth0.getTokenSilently();
+    const user = await auth0.getUser();
+    console.log('token is:' +accessToken);
+    console.log('user is:'+user);
+
+    // Making the call to the API using the token
+    const response = await fetch('http://localhost:8080/banking/orders', {
+      method: 'GET',
+      crossDomain: true,
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    });
+
+    // Getting the response and displaying it on the page
+    const responseData = await response.text();
+    console.log("response is: " + responseData);
+    const responseElement = document.getElementById("orders-call-result");
+    responseElement.innerHTML = responseData + `<br>` + `<button id="btn-call-api"onclick="deleteOrder()"class="btn btn-primary btn-margin">DELETE</button>`;
+
+} catch (e) {
+    // Display errors in the console
+    console.error(e);
+  }
+}
+
+const deleteOrder = async (targetUrl) => {
+  try {
+
+    console.log("calling api");
+    // Getting the access token from Auth0
+    const accessToken = await auth0.getTokenSilently();
+    const user = await auth0.getUser();
+    console.log('token is:' +accessToken);
+    console.log('user is:'+user);
+
+    // Making the call to the API using the token
+    const response = await fetch('http://localhost:8080/banking/orders/delete/01', {
+      method: 'DELETE',
+      crossDomain: true,
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    });
+
+    // Getting the response
+    const responseData = await response.text();
+    console.log("response is: " + responseData);
+    orders();
+    //const responseElement = document.getElementById("deleteOrder-call-result");
+    //responseElement.innerText = responseData;
+
+} catch (e) {
+    // Display errors in the console
+    console.error(e);
+  }
+}
+
 /**
  * Executes the logout flow
  */
@@ -50,7 +245,8 @@ const configureClient = async () => {
 
   auth0 = await createAuth0Client({
     domain: config.domain,
-    client_id: config.clientId
+    client_id: config.clientId,
+    audience: config.audience
   });
 };
 

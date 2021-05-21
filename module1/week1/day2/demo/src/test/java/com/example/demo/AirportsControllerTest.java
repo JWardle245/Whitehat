@@ -33,6 +33,17 @@ public class AirportsControllerTest {
     @Before
     public void init() {
     }
+
+    @Test
+    public void getBalance_OK() throws Exception {
+        mockMvc.perform(get("/banking/balance").header(HttpHeaders.AUTHORIZATION,
+                "Basic " + Base64Utils.encodeToString("admin:nimda".getBytes()))) // fix auth
+                //.andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().string("£0.00"));
+    }
+
+    /*
     @Test
     public void getAirports_OK() throws Exception {
         mockMvc.perform(get("/airports/").header(HttpHeaders.AUTHORIZATION,
@@ -88,7 +99,7 @@ public class AirportsControllerTest {
         mockMvc.perform(delete("/airports/01").header(HttpHeaders.AUTHORIZATION,
                 "Basic " + Base64Utils.encodeToString("admin:wrong".getBytes())))
                 .andExpect(status().isUnauthorized());
-    }
+    }*/
 //    private static void printJSON(Object object) {
 //        String result;
 //        try {

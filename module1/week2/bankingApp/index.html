@@ -36,7 +36,6 @@
       <div class="nav-container">
         <nav class="navbar navbar-expand-md navbar-light bg-light">
           <div class="container">
-            <div class="navbar-brand logo"></div>
             <button
               class="navbar-toggler"
               type="button"
@@ -52,7 +51,14 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a href="/" class="nav-link route-link">Home</a>
+                  <a href="/" class="nav-link route-link"><img width="50" style="margin-top: 10px;" src="/images/home.jpg"></a>
+                </li>
+                <li class="nav-item" style="margin-left: 60%; margin-right: 60%;">
+                  <img
+                    class="townbankLogo"
+                    src="/images/logo.png"
+                    alt="townbank logo"
+                  />
                 </li>
               </ul>
               <ul class="navbar-nav d-none d-md-block">
@@ -150,88 +156,103 @@
       </div>
 
       <div id="main-content" class="container mt-5 flex-grow-1">
-        <div id="content-home" class="page">
-          <div class="text-center hero">
-            <img
-              class="townbankLogo"
-              src="/images/logo.png"
-              alt="townbank logo"
-            />
-            <p></p>
+        <div id="content-home" class="page" style="list-style-type: none;">
+          <div class="text-center hero" style="list-style-type: none;">
             <p class="lead" style="margin-bottom: 10%;">
               Use this app to send and receive funds, and check your balance
             </p>
+            <li class="nav-item auth-invisible">
+              <p>Please log in to continue</p>
+            </li>
+            <!-- Get balance button: show if authenticated -->
+            <li class="nav-item auth-visible">
+              <h1>Balance: <pre id="api-call-result"></pre></h1>
+              <button
+                id="btn-call-api"
+                onclick="balance()"
+                class="btn btn-primary btn-margin auth-visible hidden">
+               Check balance
+              </button>
+            </li>
           </div>
-
+          
+          <!-- logged in dashboard-->
+          <li class="nav-item auth-visible">
           <div class="next-steps">
             <h2 class="my-5 text-center">What would you like to do?</h2>
 
             <div class="row">
-              <div class="col-md-5 mb-4">
-                <h6 class="mb-3">
-                  <a href="https://auth0.com/docs/connections">
-                    <i class="fas fa-link"></i> Configure other identity
-                    providers
-                  </a>
-                </h6>
-                <p>
-                  Auth0 supports social providers as Facebook, Twitter,
-                  Instagram and 100+, Enterprise providers as Microsoft Office
-                  365, Google Apps, Azure, and more. You can also use any OAuth2
-                  Authorization Server.
-                </p>
+              <div style="width: 15%; float: left; margin-left: 30%; margin-right: 5%;">
+              <p></p><!-- transfer money button-->
+              <button
+                id="btn-call-api"
+                onclick="transferForm()"
+                class="btn btn-primary btn-margin auth-visible hidden">
+              Transfer money
+              </button>
               </div>
-
-              <div class="col-md"></div>
-
-              <div class="col-md-5 mb-4">
-                <h6 class="mb-3">
-                  <a href="https://auth0.com/docs/multifactor-authentication">
-                    <i class="fas fa-link"></i> Enable Multifactor
-                    Authentication
-                  </a>
-                </h6>
-                <p>
-                  Add an extra layer of security by enabling Multi-factor
-                  Authentication, requiring your users to provide more than one
-                  piece of identifying information. Push notifications,
-                  authenticator apps, SMS, and DUO Security are supported.
-                </p>
+              <div style="width: 15%; float: left; margin-left: 5%; margin-right: 30%;">
+              <!-- create standing order button-->
+              <button
+                id="btn-call-api"
+                onclick="orderForm()"
+                class="btn btn-primary btn-margin auth-visible hidden">
+               Create standing order
+              </button>
               </div>
             </div>
 
-            <div class="row">
-              <div class="col-md-5 mb-4">
-                <h6 class="mb-3">
-                  <a href="https://auth0.com/docs/anomaly-detection">
-                    <i class="fas fa-link"></i> Anomaly Detection
-                  </a>
-                </h6>
-                <p>
-                  Auth0 can detect anomalies and stop malicious attempts to
-                  access your application. Anomaly detection can alert you and
-                  your users of suspicious activity, as well as block further
-                  login attempts.
-                </p>
-              </div>
-
-              <div class="col-md"></div>
-
-              <div class="col-md-5 mb-4">
-                <h6 class="mb-3">
-                  <a href="https://auth0.com/docs/rules">
-                    <i class="fas fa-link"></i> Learn About Rules
-                  </a>
-                </h6>
-                <p>
-                  Rules are JavaScript functions that execute when a user
-                  authenticates to your application. They run once the
-                  authentication process is complete, and you can use them to
-                  customize and extend Auth0's capabilities.
-                </p>
-              </div>
+            <!-- transfer form-->
+            <div class="text-center hero" id="transferForm" style="display: none; margin-bottom: 7%;">
+              <form action="" id="transferFormActual">
+                <label for="userIDTransfer">User ID</label>
+                <input type="text" id="userIdTransfer" name="userIDTransfer" value="" required><br><br>
+                <!--<input type="submit" value="Complete Transfer" id="btn-call-api" onsubmit="transfer()"
+                class="btn btn-primary btn-margin auth-visible hidden">-->
+              </form> 
+              <button
+                id="btn-call-api"
+                onclick="transfer()"
+                class="btn btn-primary btn-margin auth-visible hidden">
+               Complete Transfer
+              </button>
+              <pre id="transfer-call-result"></pre>
             </div>
+            <!-- standing order form-->
+            <div class="text-center hero" id="orderForm" style="display: none; margin-bottom: 7%;">
+              <form action="" id="orderFormActual">
+                <label for="userID">User ID:</label>
+                <input type="text" id="userID" name="userID" value="" required><br>
+                <label for="amount">Amount per month:</label>
+                <input type="text" id="amount" name="amount" value="£" required><br><br>
+                <!--<input type="submit" value="Complete Standing Order" id="btn-call-api"
+                onclick="transfer()"
+                class="btn btn-primary btn-margin auth-visible hidden">-->
+              </form> 
+              <button
+                id="btn-call-api"
+                onclick="createOrder()"
+                class="btn btn-primary btn-margin auth-visible hidden">
+               Complete Standing Order
+              </button>
+              <pre id="create-order-call-result"></pre>
+            </div>
+
           </div>
+          <div class="text-center hero" style="list-style-type: none;">
+            <!-- Get standing orders button: show if authenticated -->
+              <h1>Standing orders: </h1>
+              <p></p>
+              <button
+                id="btn-call-api"
+                onclick="orders()"
+                class="btn btn-primary btn-margin auth-visible hidden">
+               Check standing orders
+              </button>
+              <br><br>
+              <pre id="orders-call-result" style="font-size: large;"></pre>
+          </div>
+          </li>
         </div>
 
         <div class="page" id="content-profile">
@@ -256,9 +277,9 @@
           </div>
         </div>
       </div>
-
+      <p></p>
       <footer class="bg-light text-center p-5">
-        <div class="logo"></div>
+        <img width=120px src="/images/logo.png" alt="townbank logo" />
         <p style="font-size: smaller;">
           The townbank name and townbank logo are products of my imagination and are entirely original and not stolen. Any resemblance to actual banks is entirely coincidental.
         </p>
