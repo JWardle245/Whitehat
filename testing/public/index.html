@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+      <button id="myButton" onClick="random(this)" style="font-size: xx-large;">Click me</button>
+      <button id="disableButton" onClick="disable(this)" style="font-size: xx-large;">Disable</button>
+      <br><br><br><br>
+      <p>Type a character:</p>
+      <input type="text" id="textBox" onkeyup="displayKey(this)">
+      <p id="keyDisplay"></p>
+      <br><br><br>
+      <img id="picture" style="width: 30%; height: 30%;" src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg">
+      <br><br><br>
+      <button onclick="displayDate()">Display date</button>
+      <p id="date"></p>
+      <br><br><br>
+      <button onclick="displayURL()">Display URL</button>
+      <p id="url"></p>
+    </body>
+  <script src="domScripts.js"></script>
+</html>

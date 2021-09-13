@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="./style.css" rel="stylesheet" />
+</head>
+<body>
+    <header style="font-size: 30px;">Menu:</header>
+    <p id="menu"></p>
+    <form name="choiceForm" onSubmit="submitChoice(); return false;">
+        <label>Product Number:</label>
+        <input id="productInput" type="text" name="product">
+        <br>
+        <label id="money">Insert money:</label><br>
+        <button type="button" onclick="insertCoin(500)"><img class="I500"></button>
+        <button type="button" onclick="insertCoin(200)"><img class="I200"></button>
+        <button type="button" onclick="insertCoin(100)"><img class="I100"></button>
+        <button type="button" onclick="insertCoin(50)"><img class="I50"></button>
+        <button type="button" onclick="insertCoin(20)"><img class="I20"></button>
+        <button type="button" onclick="insertCoin(10)"><img class="I10"></button>
+        <button type="button" onclick="insertCoin(13)">RESET</button>
+        <p>Total money inserted: £<span id="output">0</span></p> <p style="color: white;" id="total">0</p>
+        <br>
+        <input type="submit">
+    </form>
+    <p id="result"></p>
+    <span id="change"></span>
+
+</body>
+<script src="./vendingMachine.js"></script>
+</html>

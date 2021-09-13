@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      .squareBox {
+        display: block;
+        background-color: green;
+        height: 2rem;
+        width: 2rem;
+        text-indent: -999px;
+      }
+
+      .circle {
+        display: block;
+        background-color: green;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 100%;
+        text-indent: -999px;
+      }
+    </style>
+  </head>
+
+  <body onload="writeToPage()">
+    <a
+      class="squareBox"
+      id="squareBox"
+      href="#"
+      onmouseover="style = 'background-color: red;'"
+      onmouseout="style = 'background-color: green;'"
+    >
+      Square box
+    </a>
+
+    <a class="circle" id="circle" href="#"> Circle </a>
+
+    <label id="myLabel"></label>
+    <script>
+      var circle = document.getElementById('circle');
+
+      circle.onmouseover = () => {
+        circle.style = "background-color: red;";
+      };
+
+      circle.onmouseout = () => {
+        circle.style = "background-color: green;";
+      };
+
+      var myLabel = document.getElementById('myLabel');
+
+      myLabel.setAttribute('for', 'someInput');
+      myLabel.classList.add('error-label');
+      myLabel.innerText = 'Error label content';
+
+      function writeToPage() {
+        //document.write('Hello World!');
+      }
+    </script>
+  </body>
+</html>

@@ -14,7 +14,6 @@ fetch("data.json").then(response => response.json()).then(data => {
   }).render(document.getElementById("table"));
 });
 
-
 //  GRID.JS CODE BELOW
 
 (function (global, factory) {
