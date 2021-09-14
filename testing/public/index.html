@@ -2,22 +2,76 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <style>
+      .squareBox {
+        display: block;
+        background-color: black;
+        height: 2rem;
+        width: 8rem;
+        text-indent: -999px;
+      }
+    </style>
   </head>
-  <body>
+  <body onload="displayLoad()">
+      <h1>Challenge 1:</h1>
       <button id="myButton" onClick="random(this)" style="font-size: xx-large;">Click me</button>
       <button id="disableButton" onClick="disable(this)" style="font-size: xx-large;">Disable</button>
       <br><br><br><br>
+
+      <h1>Challenge 2:</h1>
       <p>Type a character:</p>
       <input type="text" id="textBox" onkeyup="displayKey(this)">
       <p id="keyDisplay"></p>
       <br><br><br>
+
+      <h1>Challenge 3:</h1>
       <img id="picture" style="width: 30%; height: 30%;" src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg">
       <br><br><br>
+
+      <h1>Challenge 4:</h1>
       <button onclick="displayDate()">Display date</button>
       <p id="date"></p>
       <br><br><br>
+
+      <h1>Challenge 5:</h1>
       <button onclick="displayURL()">Display URL</button>
       <p id="url"></p>
+      <br><br><br>
+
+      <h1>Challenge 6:</h1>
+      <select name="drinks" id="drinks" onchange="displayDrink(this)">
+        <option value="">---Select a drink---</option>
+        <option>Coke</option>
+        <option>Sprite</option>
+        <option>Fanta</option>
+      </select>
+      <p id="drinkDisplay"></p>
+      <br><br><br>
+
+      <h1>Challenge 7:</h1>
+      <p id="loadDisplay"></p>
+      <br><br><br>
+      
+      <h1>Challenge 8:</h1>
+      <button onClick="addContent()">Add Content</button>
+      <div id="createElement"></div>
+      <br><br><br>
+
+      <h1>Challenge 9:</h1>
+      <button onClick="rewritePage()">Write to page</button>
+      <br><br><br>
+
+      <h1>Q: Difference between onkeydown, press, and up</h1>
+      <input type="text" id="keyInput" onkeydown="keyDown()" onkeypress="keyPress()" onkeyup="keyUp()">
+      <p>onkeydown</p>
+      <div class="squareBox" id="boxDown"></div>
+      <p>onkeypress</p>
+      <div class="squareBox" id="boxPress"></div>
+      <p>onkeyup</p>
+      <div class="squareBox" id="boxUp"></div>
+      <p id="keyMethodsDisplay">The specific order of what happened is: </p>
+      <br><button onClick="resetBoxes()">Reset</button>
+      <br><br><br>
     </body>
   <script src="domScripts.js"></script>
 </html>

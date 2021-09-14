@@ -32,3 +32,47 @@ function displayDate() {
 function displayURL() {
     document.getElementById("url").innerHTML = window.location.href;
 }
+
+function displayDrink(id) {
+    document.getElementById("drinkDisplay").innerHTML = id.value;
+}
+
+function displayLoad() {
+    document.getElementById("loadDisplay").innerHTML = "This page has now loaded";
+}
+
+function addContent() {
+    var headingAdd = document.createElement("h1");
+    headingAdd.innerHTML = "Magic!";  
+    var buttonAdd = document.createElement("button");
+    buttonAdd.innerHTML = "I do nothing";  
+    document.getElementById("createElement").appendChild(headingAdd); 
+    document.getElementById("createElement").appendChild(buttonAdd); 
+}
+
+function rewritePage() {
+    document.write("Hello world");
+}
+
+function resetBoxes() {
+    for (item of document.getElementsByClassName("squareBox")) {
+        item.style="background-color: black;";
+    }
+    document.getElementById("keyInput").value = "";
+    document.getElementById("keyMethodsDisplay").innerText = "The specific order of what happened is: ";
+}
+
+function keyDown() {
+    document.getElementById("boxDown").style="background-color: red;";
+    document.getElementById("keyMethodsDisplay").innerText += " down,";
+}
+
+function keyPress() {
+    document.getElementById("boxPress").style="background-color: red;";
+    document.getElementById("keyMethodsDisplay").innerText += " press,";
+}
+
+function keyUp() {
+    document.getElementById("boxUp").style="background-color: red;";
+    document.getElementById("keyMethodsDisplay").innerText += " up";
+}
