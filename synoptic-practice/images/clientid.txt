@@ -1,0 +1,31 @@
+package com.example.restaurantsystem;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+@Configuration
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .anyRequest().authenticated()
+                .and().oauth2Login();
+    }
+}
+
+auth0:
+  audience: https://restaurants/api
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev--4nv1pjk.us.auth0.com/
+
+Client ID:
+357081330724-7f4ml6nmq8p655027vqpihki0j7doehe.apps.googleusercontent.com
+
+Client Secret:
+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

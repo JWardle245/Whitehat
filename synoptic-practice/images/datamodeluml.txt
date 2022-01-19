@@ -1,0 +1,28 @@
+@startuml
+
+title Restaurants - Class Diagram
+
+class Menu {
+  +String name
+  +List items
+  +List getItems()
+}
+
+class Item {
+  +String name
+  +Int price
+}
+
+class Cart {
+  +List items
+  +List getItems()
+  +Int totalPrice()
+}
+
+class Account
+
+
+Menu "1" *-down- "many" Item: Composition
+Cart "1" *-down- "many" Item: Composition
+
+@enduml

@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "-": "0.0.1",
+    "client-oauth2": "^4.3.3",
     "express": "^4.17.1",
     "g": "^2.0.1",
     "interactjs": "^1.10.2",
