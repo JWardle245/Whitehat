@@ -122,4 +122,36 @@ public class JWTTokenHelper {
     public String getAuthHeaderFromHeader( HttpServletRequest request ) {
         return request.getHeader("Authorization");
     }
+
+    public String getAppName() {
+        return appName;
+    }
+
+    public void setAppName(String appName) {
+        this.appName = appName;
+    }
+
+    public String getSecretKey() {
+        return secretKey;
+    }
+
+    public void setSecretKey(String secretKey) {
+        this.secretKey = secretKey;
+    }
+
+    public int getExpiresIn() {
+        return expiresIn;
+    }
+
+    public void setExpiresIn(int expiresIn) {
+        this.expiresIn = expiresIn;
+    }
+
+    public SignatureAlgorithm getSIGNATURE_ALGORITHM() {
+        return SIGNATURE_ALGORITHM;
+    }
+
+    public void setSIGNATURE_ALGORITHM(SignatureAlgorithm SIGNATURE_ALGORITHM) {
+        this.SIGNATURE_ALGORITHM = SIGNATURE_ALGORITHM;
+    }
 }

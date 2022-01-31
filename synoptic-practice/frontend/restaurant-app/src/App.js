@@ -1,22 +1,23 @@
-import React, {Component} from 'react';
-import {Routes, Route, Link} from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
-import HomePage from './Components/HomePage';
-import CartPage from './Components/CartPage';
-import Navbar from './Components/Navbar';
-// App.js is a module and contains the root component App, and the other components
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import  LoginPage from './pages/LoginPage';
+import { Dashboard } from './pages/dashboard/dashboard';
+import { Component } from 'react';
 
 class App extends Component {
   render() {
     return(
-      <div className="App">
-        <Navbar/>
+      <BrowserRouter>
         <Routes>
-        <Route exact path="/" element={<HomePage/>}/>
-        <Route exact path="/cart" element={<CartPage/>}/>
+          <Route exact path="/" element={<LoginPage/>}/>
+          <Route exact path="/dashboard" element={<Dashboard/>}/>
         </Routes>
-      </div>
+      </BrowserRouter>
     );
   }
 }

@@ -34,12 +34,13 @@ public class BackendApplication {
 
 		User user = new User();
 
-		user.setUserName("Admin");
-		user.setPassword(passwordEncoder.encode("Test123"));
+		user.setUserName("NewAdmin");
+		user.setPassword(passwordEncoder.encode("Test12345"));
+		System.out.println("PASSWORD: " + passwordEncoder.encode("Test12345"));
 		user.setEnabled(true);
 		user.setAuthorities(authorityList);
 
-		userDetailsRepository.save(user); //running again gives error
+		//userDetailsRepository.save(user); //running again gives error
 	}
 
 	private Authority createAuthority(String roleCode, String roleDescription) {
