@@ -1,6 +1,10 @@
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 public class KeyboardShortcutSrv {
+
+    private List<KeyboardShortcutDTO> reservedKeys = new ArrayList<KeyboardShortcutDTO>();
 
     private KeyboardShortcutRepository keyboardShortcutRepository;
 
@@ -12,21 +16,27 @@ public class KeyboardShortcutSrv {
         return keyboardShortcutRepository.isAvailable();
     }
 
+    //Below is the actual 'get list' method for KeyboardShortcutSrv
 
-    public KeyboardShortcutResultDTO result = new KeyboardShortcutResultDTO();
-/*
-    SystemInfo systemInfo = SessionHelper.getSystemInfo(request.getSession(), 1);
-    String userId = systemInfo.getUserID().trim();
+    public KeyboardShortcutResultDTO getKeyboardShortcutsList(HttpServletRequest request) {
 
-    if(userId != null) {
-        userId = userId.toLowerCase();
+
+        KeyboardShortcutResultDTO result = new KeyboardShortcutResultDTO();
+
+
+        SystemInfo systemInfo = SessionHelper.getSystemInfo(request.getSession(), 1);
+        String userId = systemInfo.getUserID().trim();
+
+        if(userId != null) {
+            userId = userId.toLowerCase();
+        }
+
+        List<KeyboardShortcutDTO> list = keyboardShortcutRepository.retrieveKeyboardShortcutsByUser(userId);
+
+        list.addAll(reservedKeys);
+
+        result.setKeyboardShortcutsList(list);
+
+        return result;
     }
-
-    List<KeyboardShortcutDTO> list = keyboardShortcutRepository.retrieveKeyboardShortcutsByUser(userId);
-
-    list.addAll(reservedKeys);
-
-    result.setKeyboardShortcutsList(list);
-
-    return result;*/
 }

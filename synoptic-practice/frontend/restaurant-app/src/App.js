@@ -5,7 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import  LoginPage from './pages/LoginPage';
+import  HomePage from './Components/HomePage';
 import { Dashboard } from './pages/dashboard/dashboard';
 import { Component } from 'react';
 
@@ -14,7 +14,7 @@ class App extends Component {
     return(
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<LoginPage/>}/>
+          <Route exact path="/" element={<HomePage/>}/>
           <Route exact path="/dashboard" element={<Dashboard/>}/>
         </Routes>
       </BrowserRouter>

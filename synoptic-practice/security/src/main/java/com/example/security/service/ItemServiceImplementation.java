@@ -1,7 +1,7 @@
-package com.example.restaurantsystem.service;
+package com.example.security.service;
 
-import com.example.restaurantsystem.model.Item;
-import com.example.restaurantsystem.repository.ItemRepository;
+import com.example.security.model.Item;
+import com.example.security.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

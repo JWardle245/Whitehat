@@ -1,7 +1,7 @@
-package com.example.restaurantsystem.controller;
+package com.example.security.controller;
 
-import com.example.restaurantsystem.model.Item;
-import com.example.restaurantsystem.service.ItemService;
+import com.example.security.model.Item;
+import com.example.security.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

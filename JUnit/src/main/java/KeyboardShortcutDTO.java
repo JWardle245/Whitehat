@@ -12,4 +12,8 @@ public class KeyboardShortcutDTO implements Serializable {
         this.description = description;
         this.reservedShortcutColumn = reservedShortcutColumn;
     };
+
+    public String getKeys() {
+        return keys;
+    }
 }

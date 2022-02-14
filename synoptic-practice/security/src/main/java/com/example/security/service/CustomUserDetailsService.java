@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
@@ -20,8 +22,8 @@ public class CustomUserDetailsService implements UserDetailsService {
             userDetails = new CustomUserDetails();
             userDetails.setUser(user);
         }else{
-            throw new UsernameNotFoundException("User with name " + username + "does not exist.");
+            throw new UsernameNotFoundException("User with name " + username + " does not exist.");
         }
-        return null;
+        return userDetails;
     }
 }

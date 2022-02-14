@@ -1,5 +1,4 @@
-package com.example.backend.model;
-
+package com.example.security.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

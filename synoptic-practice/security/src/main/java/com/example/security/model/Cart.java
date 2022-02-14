@@ -1,4 +1,4 @@
-package com.example.restaurantsystem.model;
+package com.example.security.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

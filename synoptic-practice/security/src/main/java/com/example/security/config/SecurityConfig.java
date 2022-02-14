@@ -27,9 +27,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
-        http.authorizeRequests().antMatchers("/rest/**").authenticated().anyRequest().permitAll().and()
-                .authorizeRequests().antMatchers("/secure/**").authenticated().anyRequest().hasAnyRole("ADMIN").and()
-        .formLogin().permitAll();
+        /*http.authorizeRequests()
+                .antMatchers("/rest/**")
+                .authenticated().anyRequest().permitAll()
+                .and()
+                .authorizeRequests()
+                .antMatchers("/secure/**")
+                .authenticated()
+                .anyRequest()
+                .hasAnyRole("ADMIN")
+                .and()
+                .formLogin().permitAll();*/
+        http.authorizeRequests()
+                .antMatchers("http:/localhost3000/").authenticated()
+                .antMatchers("/rest/**").authenticated()
+                .antMatchers("/admin/**").hasAnyRole("ADMIN")
+                .anyRequest().authenticated()
+                .and()
+                .formLogin().defaultSuccessUrl("/rest/auth/loginsuccess", true).permitAll();
     }
 
     @Bean

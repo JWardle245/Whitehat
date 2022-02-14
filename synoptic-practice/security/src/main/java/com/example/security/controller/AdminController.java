@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/secure/rest")
+@RequestMapping("/admin")
 public class AdminController {
 
     @Autowired
@@ -20,7 +20,8 @@ public class AdminController {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
+    /*
+    //@PreAuthorize("hasAnyRole('ADMIN')")
     @PostMapping("/admin/add")
     public String addUserByAdmin(@RequestBody User user) {
         String pwd=user.getPassword();
@@ -28,5 +29,5 @@ public class AdminController {
         user.setPassword(encryptPwd);
         userRepository.save(user);
         return "User added.";
-    }
+    }*/
 }

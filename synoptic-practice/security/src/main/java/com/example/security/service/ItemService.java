@@ -1,6 +1,6 @@
-package com.example.restaurantsystem.service;
+package com.example.security.service;
 
-import com.example.restaurantsystem.model.Item;
+import com.example.security.model.Item;
 
 import java.util.List;
 
